@@ -15,6 +15,7 @@
 		7291939E20439E9C0059A075 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 7291939D20439E9C0059A075 /* main.m */; };
 		729193A820439E9C0059A075 /* GCDReviewTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 729193A720439E9C0059A075 /* GCDReviewTests.m */; };
 		729193B320439E9C0059A075 /* GCDReviewUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 729193B220439E9C0059A075 /* GCDReviewUITests.m */; };
+		729193C2204411F00059A075 /* Semaphore.m in Sources */ = {isa = PBXBuildFile; fileRef = 729193C1204411F00059A075 /* Semaphore.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,8 @@
 		729193AE20439E9C0059A075 /* GCDReviewUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GCDReviewUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		729193B220439E9C0059A075 /* GCDReviewUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GCDReviewUITests.m; sourceTree = "<group>"; };
 		729193B420439E9C0059A075 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		729193C0204411F00059A075 /* Semaphore.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Semaphore.h; sourceTree = "<group>"; };
+		729193C1204411F00059A075 /* Semaphore.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Semaphore.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,6 +113,8 @@
 				7291939920439E9C0059A075 /* LaunchScreen.storyboard */,
 				7291939C20439E9C0059A075 /* Info.plist */,
 				7291939D20439E9C0059A075 /* main.m */,
+				729193C0204411F00059A075 /* Semaphore.h */,
+				729193C1204411F00059A075 /* Semaphore.m */,
 			);
 			path = GCDReview;
 			sourceTree = "<group>";
@@ -267,6 +272,7 @@
 			files = (
 				7291939320439E9C0059A075 /* ViewController.m in Sources */,
 				7291939E20439E9C0059A075 /* main.m in Sources */,
+				729193C2204411F00059A075 /* Semaphore.m in Sources */,
 				7291939020439E9C0059A075 /* AppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
