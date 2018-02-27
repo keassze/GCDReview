@@ -10,4 +10,6 @@
 
 @interface Semaphore : NSObject
 
++ (instancetype)shareSemaphore;
+
 @end

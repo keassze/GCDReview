@@ -7,6 +7,7 @@
 //
 
 #import "ViewController.h"
+#import "Semaphore.h"
 
 @interface ViewController ()
 
@@ -45,7 +46,10 @@
 //    [self run_apply];
     
     /*队列组*/
-    [self run_group];
+//    [self run_group];
+    
+    /*安全线程*/
+    [Semaphore shareSemaphore];
 }
 
 #pragma mark - 同步串行
