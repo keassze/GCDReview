@@ -11,6 +11,8 @@
 
 @interface ViewController ()
 
+@property (atomic,strong) NSString *orderNum;
+
 @end
 
 @implementation ViewController
@@ -49,7 +51,10 @@
 //    [self run_group];
     
     /*安全线程*/
-    [Semaphore shareSemaphore];
+//    [Semaphore shareSemaphore];
+    
+    /*非完全安全的atomic*/
+    [self NotSafeAtomic];
 }
 
 #pragma mark - 同步串行
@@ -348,6 +353,39 @@
     //不完成别想下班（与notify同时进行）
     dispatch_group_wait(group, DISPATCH_TIME_FOREVER);
     NSLog(@"我先下班了=====>%@",[NSThread currentThread]);
+}
+
+#pragma mark - 非完全安全的atomic
+- (void)NotSafeAtomic {
+//    __block NSString *orderNum = [NSString stringWithFormat:@"001"];
+    
+    self.orderNum = [NSString stringWithFormat:@"001"];
+    
+    dispatch_queue_t queue = dispatch_queue_create("LockTest", DISPATCH_QUEUE_CONCURRENT);
+    
+    dispatch_async(queue, ^{
+        [NSThread sleepForTimeInterval:1];
+        self.orderNum = @"002";
+    });
+    
+    dispatch_async(queue, ^{
+        [NSThread sleepForTimeInterval:2];
+        self.orderNum = @"003";
+    });
+    
+    dispatch_async(queue, ^{
+        [NSThread sleepForTimeInterval:1];
+        self.orderNum = @"004";
+    });
+//
+//        dispatch_barrier_async(queue, ^{
+//            NSLog(@"打印订单");
+//        });
+    
+    dispatch_async(queue, ^{
+        [NSThread sleepForTimeInterval:1];
+        NSLog(@"订单号：%@",_orderNum);
+    });
 }
 
 - (void)didReceiveMemoryWarning {
